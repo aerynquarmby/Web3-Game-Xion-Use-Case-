@@ -4,6 +4,8 @@ console.log("app.js loaded");
 const Web3Modal = window.Web3Modal.default;
 const WalletConnectProvider = window.WalletConnectProvider.default;
 const ethers = window.ethers;
+const cors = require('cors');
+
 
 const gemGameAddress = "0x25c116c4B92C28F17e38434aD5E01024273134e0"; // replace with your deployed contract address
 const gemGameAbi = [
@@ -114,3 +116,9 @@ document.getElementById("credit-gems-btn").addEventListener("click", async () =>
 });
 
 connectWallet();
+
+app.use(cors({
+    origin: 'https://main--dainty-lebkuchen-400e8c.netlify.app/'
+  }));
+  
+
